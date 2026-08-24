@@ -1,280 +1,450 @@
-# GST Billing Management System
+# 🧾 GST Billing Management System
 
-A complete, modern GST Billing Management System built with Next.js, React, and Tailwind CSS. Perfect for small businesses and accountants to manage invoices, clients, and GST calculations.
+> **A modern, full-featured GST Billing & Business Management System built with Next.js, React, and Tailwind CSS.**
 
-## Features
+A complete billing solution designed for **small businesses, freelancers, and accountants** to manage invoices, clients, products, GST calculations, analytics, and business settings from one centralized dashboard.
 
-### Authentication & Security
-- User registration with email verification
-- Secure login with JWT authentication
-- Password hashing with bcrypt
-- Forgot password with OTP verification
-- Role-based access control (Admin & User)
-- Session management with auto-logout
+---
 
-### Invoice Management
-- Create, edit, view, and delete invoices
-- Automatic GST calculations (CGST, SGST, IGST)
-- Dynamic line items with HSN codes
-- Real-time total calculations
-- Invoice status tracking (Draft, Sent, Paid)
-- Auto-generated invoice numbers with custom prefix
-- Download invoices as PDF
-- Share invoices via email or WhatsApp
+## ✨ Highlights
 
-### Client Management
-- Add, edit, and delete clients
-- Store GSTIN, address, and contact information
-- Search and filter clients
-- Client history and transaction tracking
+* 🔐 Secure authentication with JWT & bcrypt
+* 🧾 Complete invoice management
+* 🇮🇳 Automatic GST calculation — CGST, SGST & IGST
+* 👥 Client & customer management
+* 📦 Product & inventory management
+* 📊 Real-time business analytics
+* 📈 Revenue & GST reporting
+* 👨‍💼 Admin dashboard with role-based access
+* 📄 PDF invoice generation
+* 📱 Fully responsive & mobile-friendly UI
+* 🎨 Modern dark-themed glassmorphism design
 
-### Product Management
-- Manage products and services
-- HSN code management
-- Price and tax rate configuration
-- Stock tracking
-- Quick product selection in invoices
+---
 
-### Dashboard & Analytics
-- Real-time sales summary
-- Monthly revenue and GST reports
-- Graphical analytics with charts
-- KPI cards (Revenue, GST, Invoices, Clients)
-- Activity logs and audit trails
+## 🚀 Features
 
-### Admin Panel
-- User management and monitoring
-- System statistics and health monitoring
-- User role management
-- System settings and configuration
+### 🔐 Authentication & Security
 
-### Settings & Configuration
-- Business information setup
-- Invoice settings (prefix, starting number)
-- Default tax rate configuration
-- Multi-currency support
-- State-wise GST configuration
+* User registration & email verification
+* Secure login with JWT authentication
+* Password hashing using bcrypt
+* Forgot password with OTP verification
+* Role-based access control
+* Admin & User roles
+* Session management with auto-logout
+* Secure API endpoints
+* Input validation & sanitization
 
-## Tech Stack
+### 🧾 Invoice Management
+
+* Create, edit, view & delete invoices
+* Automatic GST calculations
+* CGST, SGST & IGST support
+* Dynamic invoice line items
+* HSN code support
+* Real-time total calculation
+* Invoice status tracking:
+
+  * Draft
+  * Sent
+  * Paid
+* Auto-generated invoice numbers
+* Custom invoice prefixes
+* PDF invoice generation
+* Share invoices via Email & WhatsApp
+* Bulk invoice operations
+* Custom invoice templates
+
+### 👥 Client Management
+
+* Add, edit & delete clients
+* GSTIN management
+* Business address & contact details
+* Search & filter clients
+* Client transaction history
+* Client performance tracking
+
+### 📦 Product Management
+
+* Manage products & services
+* HSN code management
+* Configurable pricing
+* Custom tax rates
+* Stock tracking
+* Quick product selection while creating invoices
+
+### 📊 Dashboard & Analytics
+
+Monitor your business performance through an interactive dashboard.
+
+* Real-time sales summary
+* Monthly revenue tracking
+* GST collection reports
+* Invoice statistics
+* Client analytics
+* Product performance
+* Interactive charts
+* KPI cards
+* Activity logs
+* Audit trails
+
+### 👨‍💼 Admin Panel
+
+* User management
+* User role management
+* System statistics
+* Application health monitoring
+* Activity monitoring
+* System configuration
+
+### ⚙️ Settings & Configuration
+
+* Business information
+* Invoice configuration
+* Custom invoice prefix
+* Starting invoice number
+* Default tax rates
+* State-wise GST configuration
+* Multi-currency support
+
+---
+
+## 🧮 GST Calculation
+
+The system automatically determines the applicable GST based on the transaction type.
+
+| Transaction Type | GST                      |
+| ---------------- | ------------------------ |
+| Intra-State      | CGST + SGST              |
+| Inter-State      | IGST                     |
+| Custom Rate      | Configurable per product |
+
+### Example
+
+For an intra-state transaction with an 18% GST rate:
+
+```text
+CGST = 9%
+SGST = 9%
+Total GST = 18%
+```
+
+For an inter-state transaction:
+
+```text
+IGST = 18%
+```
+
+Tax rates can also be customized according to the product/service configuration.
+
+---
+
+## 🛠️ Tech Stack
 
 ### Frontend
-- **Framework**: Next.js 16 (App Router)
-- **UI Library**: React 19
-- **Styling**: Tailwind CSS v4
-- **Charts**: Recharts
-- **Icons**: Lucide React
-- **Animations**: Framer Motion (CSS-based)
-- **State Management**: React Hooks + localStorage
+
+* **Next.js 16** — App Router
+* **React 19**
+* **Tailwind CSS v4**
+* **Recharts** — Data visualization
+* **Lucide React** — Icons
+* **Framer Motion** — Animations
+* React Hooks
+* LocalStorage
 
 ### Backend
-- **Runtime**: Node.js
-- **Framework**: Next.js API Routes
-- **Database**: MongoDB (ready for integration)
-- **Authentication**: JWT + Bcrypt
-- **Email**: Nodemailer (ready for integration)
-- **PDF Generation**: jsPDF/pdfkit (ready for integration)
 
-### Design
-- Professional dark theme with blue/purple accents
-- Glassmorphism effects
-- Smooth animations and transitions
-- Fully responsive design
-- Mobile-first approach
+* **Node.js**
+* **Next.js API Routes**
+* **MongoDB** — Database integration ready
+* **JWT** — Authentication
+* **bcrypt** — Password security
+* **Nodemailer** — Email integration ready
+* **jsPDF / PDFKit** — PDF generation ready
 
-## Installation
+### UI & Design
 
-### Using shadcn CLI (Recommended)
+* 🌙 Dark modern interface
+* ✨ Glassmorphism
+* 🎨 Blue & purple accent system
+* 🌀 Smooth animations
+* 📱 Responsive design
+* ⚡ Mobile-first architecture
 
-\`\`\`bash
-npx shadcn-cli@latest init -d
-cd your-project
-npm install
-npm run dev
-\`\`\`
+---
 
-### Manual Installation
+## 📁 Project Structure
 
-\`\`\`bash
-git clone <repository-url>
-cd gst-billing-system
-npm install
-npm run dev
-\`\`\`
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Usage
-
-### Getting Started
-
-1. **Sign Up**: Create a new account with your business details
-2. **Configure Settings**: Set up your business information and invoice preferences
-3. **Add Clients**: Create client profiles with GSTIN and contact details
-4. **Add Products**: Set up your products/services with HSN codes and tax rates
-5. **Create Invoices**: Generate invoices with automatic GST calculations
-6. **Track Analytics**: Monitor your business metrics and generate reports
-
-### Demo Credentials
-
-- **Email**: demo@example.com
-- **Password**: password123
-
-## Project Structure
-
-\`\`\`
+```text
 gst-billing-system/
+│
 ├── app/
-│   ├── layout.tsx              # Root layout
-│   ├── page.tsx                # Landing page
-│   ├── globals.css             # Global styles
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── globals.css
+│   │
 │   ├── api/
-│   │   └── auth/               # Authentication routes
-│   ├── login/                  # Login page
-│   ├── signup/                 # Signup page
-│   ├── forgot-password/        # Password recovery
-│   ├── dashboard/              # Main dashboard
-│   ├── invoices/               # Invoice management
-│   ├── clients/                # Client management
-│   ├── products/               # Product management
-│   ├── reports/                # Analytics & reports
-│   ├── settings/               # User settings
-│   └── admin/                  # Admin panel
+│   │   └── auth/
+│   │
+│   ├── login/
+│   ├── signup/
+│   ├── forgot-password/
+│   ├── dashboard/
+│   ├── invoices/
+│   ├── clients/
+│   ├── products/
+│   ├── reports/
+│   ├── settings/
+│   └── admin/
+│
 ├── components/
-│   ├── ui/                     # shadcn UI components
-│   ├── sidebar.tsx             # Navigation sidebar
-│   ├── dashboard-header.tsx    # Dashboard header
-│   └── invoice-pdf.tsx         # PDF template
-├── hooks/                      # Custom React hooks
-├── lib/                        # Utility functions
-└── public/                     # Static assets
-\`\`\`
+│   ├── ui/
+│   ├── sidebar.tsx
+│   ├── dashboard-header.tsx
+│   └── invoice-pdf.tsx
+│
+├── hooks/
+│
+├── lib/
+│
+├── public/
+│
+├── .env.local
+├── package.json
+└── README.md
+```
 
-## Key Features Explained
+---
 
-### GST Calculations
-- Automatic CGST (9%) and SGST (9%) for intra-state transactions
-- IGST (18%) for inter-state transactions
-- Customizable tax rates per product
-- Real-time calculation updates
-
-### Invoice Management
-- Line-item based invoicing
-- HSN code support for GST compliance
-- Multiple invoice statuses
-- Bulk operations support
-- Invoice templates
-
-### Analytics
-- Revenue tracking
-- GST collection monitoring
-- Client performance metrics
-- Product sales analysis
-- Monthly and yearly reports
-
-### Security
-- JWT-based authentication
-- Password hashing with bcrypt
-- Role-based access control
-- Secure API endpoints
-- Input validation and sanitization
-
-## API Endpoints
+## 🔌 API Endpoints
 
 ### Authentication
-- `POST /api/auth/signup` - User registration
-- `POST /api/auth/login` - User login
-- `POST /api/auth/forgot-password` - Password recovery
-- `POST /api/auth/reset-password` - Password reset
+
+| Method | Endpoint                    | Description            |
+| ------ | --------------------------- | ---------------------- |
+| `POST` | `/api/auth/signup`          | Register user          |
+| `POST` | `/api/auth/login`           | Login user             |
+| `POST` | `/api/auth/forgot-password` | Request password reset |
+| `POST` | `/api/auth/reset-password`  | Reset password         |
 
 ### Invoices
-- `GET /api/invoices` - List invoices
-- `POST /api/invoices` - Create invoice
-- `GET /api/invoices/:id` - Get invoice details
-- `PUT /api/invoices/:id` - Update invoice
-- `DELETE /api/invoices/:id` - Delete invoice
-- `GET /api/invoices/:id/pdf` - Download PDF
+
+| Method   | Endpoint                | Description          |
+| -------- | ----------------------- | -------------------- |
+| `GET`    | `/api/invoices`         | Get invoices         |
+| `POST`   | `/api/invoices`         | Create invoice       |
+| `GET`    | `/api/invoices/:id`     | Get invoice          |
+| `PUT`    | `/api/invoices/:id`     | Update invoice       |
+| `DELETE` | `/api/invoices/:id`     | Delete invoice       |
+| `GET`    | `/api/invoices/:id/pdf` | Download invoice PDF |
 
 ### Clients
-- `GET /api/clients` - List clients
-- `POST /api/clients` - Add client
-- `PUT /api/clients/:id` - Update client
-- `DELETE /api/clients/:id` - Delete client
+
+| Method   | Endpoint           | Description   |
+| -------- | ------------------ | ------------- |
+| `GET`    | `/api/clients`     | Get clients   |
+| `POST`   | `/api/clients`     | Add client    |
+| `PUT`    | `/api/clients/:id` | Update client |
+| `DELETE` | `/api/clients/:id` | Delete client |
 
 ### Products
-- `GET /api/products` - List products
-- `POST /api/products` - Add product
-- `PUT /api/products/:id` - Update product
-- `DELETE /api/products/:id` - Delete product
 
-## Environment Variables
+| Method   | Endpoint            | Description    |
+| -------- | ------------------- | -------------- |
+| `GET`    | `/api/products`     | Get products   |
+| `POST`   | `/api/products`     | Add product    |
+| `PUT`    | `/api/products/:id` | Update product |
+| `DELETE` | `/api/products/:id` | Delete product |
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+
+cd gst-billing-system
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
 
 Create a `.env.local` file:
 
-\`\`\`env
+```env
 NEXT_PUBLIC_API_URL=http://localhost:3000
+
 DATABASE_URL=mongodb://localhost:27017/gst-billing
+
 JWT_SECRET=your-secret-key
+
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your-email@gmail.com
 SMTP_PASS=your-app-password
-\`\`\`
+```
 
-## Deployment
+### 4. Start Development Server
 
-### Deploy to Vercel
+```bash
+npm run dev
+```
 
-\`\`\`bash
-npm install -g vercel
-vercel
-\`\`\`
+Open:
 
-### Deploy to Other Platforms
-
-The application is ready for deployment on:
-- Vercel
-- Netlify
-- AWS
-- Google Cloud
-- DigitalOcean
-- Heroku
-
-## Future Enhancements
-
-- [ ] Multi-language support
-- [ ] Advanced reporting with custom date ranges
-- [ ] Recurring invoices
-- [ ] Payment gateway integration (Stripe, Razorpay)
-- [ ] Mobile app (React Native)
-- [ ] Real-time notifications
-- [ ] Bulk invoice generation
-- [ ] Advanced inventory management
-- [ ] Customer portal
-- [ ] API for third-party integrations
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Support
-
-For support, email support@gstbilling.com or open an issue on GitHub.
-
-## Changelog
-
-### Version 1.0.0 (Initial Release)
-- Complete authentication system
-- Invoice management with GST calculations
-- Client and product management
-- Dashboard with analytics
-- Admin panel
-- Settings and configuration
-- PDF export functionality
+```text
+http://localhost:3000
+```
 
 ---
 
-Built with ❤️ using Next.js and React
+## 🧑‍💻 Usage
+
+### Getting Started
+
+1. **Create an Account**
+   Register using your business information.
+
+2. **Configure Business Settings**
+   Add business details, invoice prefix, tax rates, and preferences.
+
+3. **Add Clients**
+   Store customer information including GSTIN and address.
+
+4. **Add Products**
+   Configure products/services, HSN codes, prices, and tax rates.
+
+5. **Create Invoices**
+   Add products and let the system automatically calculate GST.
+
+6. **Track Business Performance**
+   Monitor revenue, GST, invoices, clients, and product performance through analytics.
+
+---
+
+## 🔑 Demo Credentials
+
+```text
+Email:    demo@example.com
+Password: password123
+```
+
+> ⚠️ Demo credentials are intended for local/demo environments only.
+
+---
+
+## ☁️ Deployment
+
+### Vercel
+
+```bash
+npm install -g vercel
+
+vercel
+```
+
+### Supported Platforms
+
+The application can be deployed on:
+
+* ▲ Vercel
+* Netlify
+* AWS
+* Google Cloud
+* DigitalOcean
+* Heroku
+
+---
+
+## 🔮 Future Enhancements
+
+* [ ] Multi-language support
+* [ ] Advanced custom reports
+* [ ] Recurring invoices
+* [ ] Razorpay / Stripe integration
+* [ ] React Native mobile application
+* [ ] Real-time notifications
+* [ ] Bulk invoice generation
+* [ ] Advanced inventory management
+* [ ] Customer portal
+* [ ] Third-party API integrations
+* [ ] Automated invoice reminders
+* [ ] Expense management
+* [ ] Backup & restore functionality
+
+---
+
+## 🔒 Security
+
+The application follows modern security practices including:
+
+* JWT-based authentication
+* bcrypt password hashing
+* Role-based authorization
+* Secure API routes
+* Input validation
+* Data sanitization
+* Session management
+* Protected admin functionality
+
+---
+
+## 📌 Project Status
+
+**Version:** `1.0.0`
+
+**Status:** 🚀 Active Development
+
+The current version includes authentication, invoicing, client management, product management, analytics, admin controls, and business configuration.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+```bash
+# Fork the repository
+# Create your feature branch
+git checkout -b feature/amazing-feature
+
+# Commit your changes
+git commit -m "Add amazing feature"
+
+# Push to your branch
+git push origin feature/amazing-feature
+```
+
+Then open a Pull Request.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## 📬 Support
+
+For issues, suggestions, or feature requests, please open an issue in the GitHub repository.
+
+---
+
+<div align="center">
+
+### 🧾 GST Billing Management System
+
+**Built with ❤️ using Next.js, React & Tailwind CSS**
+
+⭐ If you found this project useful, consider giving it a star!
+
+</div>
